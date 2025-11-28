@@ -3,3 +3,4 @@
 /build
 /mongo
 /docker-compose.yml
+/.env
