@@ -70,7 +70,7 @@ export class GameController {
     const { gameId } = req.body
     const room = new RestartGameUsecase(this.roomRepository)
       .execute(gameId)
-    SocketSingleton.getIO().to(room.id).emit('game:update', {game: room.game})
+    SocketSingleton.getIO().to(room.id).emit('game:restarted', {game: room.game})
     res.status(200).json(room.game)
   }
 }
